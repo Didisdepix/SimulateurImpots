@@ -2,6 +2,10 @@ package com.kerware.simulateurReusine.calculators;
 
 import com.kerware.simulateur.SituationFamiliale;
 
+/**
+ * Cette classe calcule l'abattement en fonction des revenus 
+ */
+
 public class AbattementCalculator {
     private static final int L_ABT_MAX = 14171;
     private static final int L_ABT_MIN = 495;

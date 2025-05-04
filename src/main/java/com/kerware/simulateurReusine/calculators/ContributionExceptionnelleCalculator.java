@@ -1,7 +1,9 @@
 package com.kerware.simulateurReusine.calculators;
 
 import com.kerware.simulateurReusine.enums.*;
-
+/**
+ * Cette classe calcule la contribution éventuelle en cas de grande fortune
+ */
 public class ContributionExceptionnelleCalculator {
 
     public double calculer(double revenu, double nbPartsDecl) {

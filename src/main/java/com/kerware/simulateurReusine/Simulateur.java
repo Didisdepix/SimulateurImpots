@@ -18,7 +18,7 @@ import com.kerware.simulateurReusine.calculators.PartsCalculator;
 
 public class Simulateur {
 
-	//Résultat des fonctions
+	//Informations données par les fonctions et récupérables avec les getters
 	private double abattement =0;
 	private double revenuFiscal = 0;
 	private double nbParts = 0;
@@ -33,29 +33,41 @@ public class Simulateur {
 
     public int calculImpot( int revNetDecl1, int revNetDecl2, SituationFamiliale sitFam, int nbEnfants, int nbEnfantsHandicapes, boolean parentIsol) {
 
-    	//Test au préalable si les paramètres sont bons et soulève un exception si ce n'est pas le cas
-    	TesteurParametres testeur = new TesteurParametres(revNetDecl1,  revNetDecl2,  sitFam,  nbEnfants,  nbEnfantsHandicapes,  parentIsol);
+    	 //Test au préalable si les paramètres sont bons et soulève un exception si ce n'est pas le cas
+    	 TesteurParametres testeur = new TesteurParametres(revNetDecl1,  revNetDecl2,  sitFam,  nbEnfants,  nbEnfantsHandicapes,  parentIsol);
   
-    	
-    	this.abattement = new AbattementCalculator().calculer(revNetDecl1, revNetDecl2, sitFam);
+    	 
+    	 this.abattement = new AbattementCalculator().calculer(revNetDecl1, revNetDecl2, sitFam);
         
         //Revenu fiscal de référence
     	 this.revenuFiscal = revNetDecl1 + revNetDecl2 - abattement;
 
+    	 //Nombre de parts du foyer
          this.nbParts = new PartsCalculator().calculer(sitFam, nbEnfants, nbEnfantsHandicapes, parentIsol);
+         
+         //Nombre de parts qui concerne les déclarants adultes
          this.nbPartsDecl = (sitFam == SituationFamiliale.MARIE || sitFam == SituationFamiliale.PACSE) ? 2 : 1;
 
+         //Impots payé par les déclarants uniquement
          this.impotsDecl = new ImpotBrutCalculator().calculer(revenuFiscal, nbPartsDecl);
+         
+         //Impots payé par le foyer entier
          this.impotsFoyer = new ImpotBrutCalculator().calculer(revenuFiscal, nbParts);
 
+         //Impot payé après application de la baisse
          this.impotsPlafonnes = new BaisseImpotCalculator().appliquerPlafond(impotsDecl, impotsFoyer, nbParts, nbPartsDecl);
+         
+         //Contribution éventuelle en cas de gros revenus
          this.contributionExceptionnelle = new ContributionExceptionnelleCalculator().calculer(revenuFiscal, nbPartsDecl);
 
+         //Impot net sur le revenu
          this.impotNet = (int)new DecoteCalculator().appliquer(impotsPlafonnes, nbPartsDecl, this.contributionExceptionnelle);
         System.out.println("Impôt net à payer : " + impotNet + " €");
          
         return this.impotNet;
     }
+    
+    //Getters
 
 	public double getContribExceptionnelle() {
 		return this.contributionExceptionnelle;

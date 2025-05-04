@@ -1,5 +1,9 @@
 package com.kerware.simulateurReusine.calculators;
 
+/**
+ * Cette classe calcule la baisse d'impot en fonction des enfants
+ */
+
 public class BaisseImpotCalculator {
     private static final double PLAF_DEMI_PART = 1759;
 
