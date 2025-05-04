@@ -1,1 +1,21 @@
-# SimulateurImpots
+##Objectif
+
+Ce projet vise à améliorer la qualité du Simulateur existant sans en modifier le comportement fonctionnel.  
+Les objectifs du réusinage incluent :
+- Amélioration de la lisibilité
+- Meilleure maintenabilité
+- Respect des bonnes pratiques de programmation
+
+
+##Commentaires :              
+	Toutes les classes et énumérations sont commentées afin d'identifier leur rôle. 
+	Le code des fonctions est également commenté pour améliorer la lisibilité du code.
+
+##Structure :                  
+	Les attributs et méthodes de la classe Simulateur ont été séparés en plusieurs classes: 
+		Les attributs tels que les limites de tranches ou les taux sont devenus des énumérations dans le package enums.
+		Les tests réalisés au préalable par la fonction sont maintenant réalisés par la classe TestParametres
+		Les exigences présentent dans la méthode calculImpot du Simulateur ont été placées dans des classes.
+			Ces classes possèdent, sous forme de constantes, des attributs qui les concernent (par exemple: AbattementCalculator possède l'abattement max, l'abattement min et le taux 			d'abattement sous forme de constantes
+			Les classes possèdent au plus deux fonctions, chacune est donc attribuée à une tache précise
+			La classe ImpotBrutCalculator est utilisée pour deux cas : le calcul de l'impôt des déclarants et l'impôt du foyer. La seule différence est le nombre de parts, le 				fonctionnement restant le même
