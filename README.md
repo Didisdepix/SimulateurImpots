@@ -1,4 +1,4 @@
-##Objectif
+## Objectif
 
 Ce projet vise à améliorer la qualité du Simulateur existant sans en modifier le comportement fonctionnel.  
 Les objectifs du réusinage incluent :
@@ -7,11 +7,11 @@ Les objectifs du réusinage incluent :
 - Respect des bonnes pratiques de programmation
 
 
-##Commentaires :              
+## Commentaires :              
 	Toutes les classes et énumérations sont commentées afin d'identifier leur rôle. 
 	Le code des fonctions est également commenté pour améliorer la lisibilité du code.
 
-##Structure :                  
+## Structure :                  
 	Les attributs et méthodes de la classe Simulateur ont été séparés en plusieurs classes: 
 		Les attributs tels que les limites de tranches ou les taux sont devenus des énumérations dans le package enums.
 		Les tests réalisés au préalable par la fonction sont maintenant réalisés par la classe TestParametres
