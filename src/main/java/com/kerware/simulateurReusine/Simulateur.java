@@ -14,21 +14,6 @@ import com.kerware.simulateurReusine.enums.*;
 public class Simulateur {
 
 
-    // Abattement
-    private  int lAbtMax = 14171;
-    private  int lAbtMin = 495;
-    private double tAbt = 0.1;
-
-    // Plafond de baisse maximal par demi part
-    private double plafDemiPart = 1759;
-
-    private double seuilDecoteDeclarantSeul = 1929;
-    private double seuilDecoteDeclarantCouple    = 3191;
-
-    private double decoteMaxDeclarantSeul = 873;
-    private double decoteMaxDeclarantCouple = 1444;
-    private double tauxDecote = 0.4525;
-
     // revenu net
     private int rNetDecl1 = 0;
     private int rNetDecl2 = 0;
