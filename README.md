@@ -16,6 +16,6 @@ Les objectifs du réusinage incluent :
 		Les attributs tels que les limites de tranches ou les taux sont devenus des énumérations dans le package enums.
 		Les tests réalisés au préalable par la fonction sont maintenant réalisés par la classe TestParametres
 		Les exigences présentent dans la méthode calculImpot du Simulateur ont été placées dans des classes.
-			Ces classes possèdent, sous forme de constantes, des attributs qui les concernent (par exemple: AbattementCalculator possède l'abattement max, l'abattement min et le taux 			d'abattement sous forme de constantes
+			Ces classes possèdent, sous forme de constantes, des attributs qui les concernent (par exemple: AbattementCalculator possède l'abattement max, l'abattement min et le taux d'abattement sous forme de constantes
 			Les classes possèdent au plus deux fonctions, chacune est donc attribuée à une tache précise
-			La classe ImpotBrutCalculator est utilisée pour deux cas : le calcul de l'impôt des déclarants et l'impôt du foyer. La seule différence est le nombre de parts, le 				fonctionnement restant le même
+			La classe ImpotBrutCalculator est utilisée pour deux cas : le calcul de l'impôt des déclarants et l'impôt du foyer. La seule différence est le nombre de parts, le fonctionnement restant le même
