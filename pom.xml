@@ -125,6 +125,9 @@
                                     </limits>
                                 </rule>
                             </rules>
+                            <excludes>
+								<exclude>com/kerware/simulateur/**/*.class</exclude>
+							</excludes>
                         </configuration>
                     </execution>
                     <execution>
@@ -159,6 +162,11 @@
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.8.10</version>
+                <configuration>
+                    <excludes>
+                        <exclude>com/kerware/simulateur/**/*.class</exclude>
+                    </excludes>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

@@ -10,24 +10,8 @@ import com.kerware.simulateur.SituationFamiliale;
  */
 
 public class TesteurParametres {
-	
-	private int revNetDecl1;
-	private int revNetDecl2;
-	private SituationFamiliale sitFam;
-	private int nbEnfants;
-	private int nbEnfantsHandicapes;
-	private boolean parentIsol;
 
 	public TesteurParametres( int revNetDecl1, int revNetDecl2, SituationFamiliale sitFam, int nbEnfants, int nbEnfantsHandicapes, boolean parentIsol) {
-		this.nbEnfants = nbEnfants;
-		this.nbEnfantsHandicapes = nbEnfantsHandicapes;
-		this.parentIsol = parentIsol;
-		this.revNetDecl1 = revNetDecl1;
-		this.revNetDecl2 = revNetDecl2;
-	}
-	
-	// Test tous les paramètres rentrés et renvoie la première exception croisée
-	public void testerParametres() {
 		if ( revNetDecl1  < 0 || revNetDecl2 < 0 ) {
             throw new IllegalArgumentException("Le revenu net ne peut pas être négatif");
         }
